@@ -25,3 +25,33 @@
 #тому напишемо функцію ruffier_result(r_index, level), яка отримуватиме
 #розрахований індекс Руф'є та рівень "незадовільно" для віку тестованого, і віддавати результат
 # тут задаються рядки, за допомогою яких викладено результат:
+# n = (min(15, age))//2
+#
+
+
+
+
+def indeks_rufje (test1, test2, test3): return (4 * (test1 + test2 + test3) - 208) / 10
+
+def doindeks_rufje (yearsold):
+    razy = (min (15, yearsold) - 7) // 2
+    x = 21 - razy * 1.5
+    return int(x)
+
+def rezuvlvtat (rufje, max_index):
+    pracezdatnisvtv = [
+    "Низька, до лікаря терміново!",
+    "Задовільно. Але зверніться до лікаря.",
+    "Середня. Бажано звернутися до лікаря.",
+    "Вище середнього. Необов'язково турбувати лікаря під час відпустки.",
+    "Висока. Дайте лікарю відпочити"]
+    if rufje >= max_index:
+        return pracezdatnisvtv[0]
+    elif rufje >= max_index - 4.5:
+        return pracezdatnisvtv[1]
+    elif rufje >= max_index - 9.5:
+        return pracezdatnisvtv[2]
+    elif rufje >= max_index - 15:
+        return pracezdatnisvtv[3]
+    else:
+        return pracezdatnisvtv[4]
